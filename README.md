@@ -1,51 +1,88 @@
-# Multi-Source Review Mining: Pros, Cons, and Comparison of Beauty Products
-**Author:** Sarvin Shahir  
+# Multi-Source Review Mining: Pros, Cons, and Product Similarity
+## Author: Sarvin Shahir
 
-This project analyzes beauty product reviews from multiple retailers — Sephora, Ulta, and Shoppers Drug Mart — using Natural Language Processing (NLP) techniques to extract sentiment, pros, and cons.
+<<<<<<< HEAD
+This project analyzes beauty product reviews from multiple retailers — Sephora, Ulta, and Shoppers Drug Mart — using Natural Language Processing (NLP) techniques to extract benefits, disadvantages, and product similarity.  
+A Streamlit application is included for interactive product comparison.
 
 ---
 
 ## 📁 Project Structure
-data/ → Contains the raw and cleaned CSV datasets
-notebooks/ → Jupyter notebooks for each stage
-outputs/ → Evaluation results and visuals
-
-yaml
-Copy code
-
-| Notebook | Purpose |
-|-----------|----------|
-| `dataset1.ipynb` | API extraction for 4 products from 3 retailers |
-| `EDA.ipynb` | Cleaning, preprocessing, and exploratory visualizations |
-| `TF_IDF.ipynb` | Baseline sentiment model |
-| `BERT.ipynb` | Transformer fine-tuning for rating prediction |
-| `opinion_mining.ipynb` | Pros and cons extraction experiments |
+**data/** → Raw and processed CSV files  
+**notebooks/** → All analysis and modeling notebooks  
+**outputs/** → Heatmaps, similarity plots, and visualizations  
+**app.py** → Streamlit app for product comparison  
 
 ---
 
-## 📊 Dataset
-- 4 foundation products: NARS, Estée Lauder, Dior, Armani  
-- 200–300 reviews per product (≈ 1 000 total)  
-- Sources: Sephora (Bazaarvoice), Ulta & Shoppers (PowerReviews)
+## 📓 Notebooks Overview
+
+| Notebook | Purpose |
+|----------|---------|
+| `1_dataset_collection.ipynb` | Collect and merge reviews from Sephora, Ulta, Shoppers |
+| `2_dataset_foundation.ipynb` | Foundation review dataset processing |
+| `3_dataset_moisturizer.ipynb` | Moisturizer review dataset processing |
+| `4_EDA.ipynb` | Data cleaning and exploratory analysis |
+| `5_TF_IDF.ipynb` | Baseline feature extraction + classical models |
+| `6_opinion_mining.ipynb` | Pros/cons extraction experiments |
+| `7_BERT.ipynb` | BERT model for rating prediction |
+| `8_BART.ipynb` | BART for text summarization and extraction |
+| `9_KeyBert.ipynb` | Keyword extraction trials |
+| `10_GPT_4o_mini.ipynb` | Benefit & disadvantage extraction with GPT |
+| `11_Comparison.ipynb` | Comparison of extracted benefits across brands |
+| `12_before_streamlit.ipynb` | Generate files for the Streamlit app |
+
+---
+
+## 📊 Dataset Summary
+- Reviews collected for **12 beauty products** (foundations + moisturizers)  
+- ~1,000+ total reviews  
+- Extracted metadata includes:  
+  - benefit tags  
+  - disadvantage tags  
+  - semantic similarity scores  
+- Sources:  
+  - **Sephora** (Bazaarvoice)  
+  - **Ulta & Shoppers Drug Mart** (PowerReviews)
 
 ---
 
 ## ⚙️ Models Implemented
-1. **TF-IDF + Logistic Regression**  
-2. **BERT (bert-base-uncased)**  
-3. **Aspect extraction prototypes** (VADER & Flan-T5)
+
+### Classical
+- **TF-IDF + Logistic Regression**
+
+### Transformer Models
+- **BERT (bert-base-uncased)**  
+- **BART**  
+- **GPT-4o-mini** for high-quality benefit/disadvantage extraction  
+
+### Keyword & Aspect Models
+- **KeyBERT**  
+- Early experiments with **VADER** and **Flan-T5**
+
+### Similarity Modeling
+- TF-IDF vectorization of extracted benefits  
+- Cosine similarity matrix for product-to-product comparison  
+- Heatmaps for moisturizer and foundation categories  
 
 ---
+
+## 🌐 Streamlit App
+The Streamlit application allows users to:
+- Select **foundation** or **moisturizer**  
+- View extracted **benefits** and **disadvantages**  
+- See the **most similar product** based on NLP similarity  
+
+Run locally:
+```bash
+streamlit run app.py
+
 
 ## 🧠 Next Steps
-- Add more products  
-- Implement RNN (LSTM)  
-- Improve pros/cons extraction  
-- Build Streamlit app for interactive comparison
 
----
-
-## 🚀 How to Run
-```bash
-pip install -r requirements.txt
-jupyter notebook notebooks/
+- Add additional product categories
+- Improve similarity using SBERT
+- Add product images and brand metadata
+- Deploy the Streamlit app online
+=======
