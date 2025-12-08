@@ -2,112 +2,105 @@
 **Author:** Sarvin Shahir
 
 This project analyzes beauty product reviews collected from Sephora, Ulta, and Shoppers Drug Mart.  
-Using NLP techniques, it extracts key **benefits**, **disadvantages**, and **similarity scores**, and provides an interactive Streamlit app for comparison.
-
----
-
-## Overview
-
-The goal of this project is to understand how beauty products compare based on real customer feedback.  
-NLP methods were used to extract pros/cons, transform the reviews into numerical vectors, and compute how similar different products are to each other.
-
-A Streamlit app allows users to:
-- Select a product category  
-- View product benefits and disadvantages  
-- Find the most similar product based on TF-IDF similarity  
+It extracts benefits, disadvantages, and product similarity using NLP methods, and includes a Streamlit app for interactive comparison.
 
 ---
 
 ## Project Structure
 
+data/  
+• all_reviews.csv  
+• all_reviews_foundation.csv  
+• all_reviews_moisture.csv  
+• nlp_merged_reviews.csv  
+• products_benefit_disadv.csv  
+• products_final.csv  
+• similarity_matrix.csv  
 
+notebooks/  
+• dataset1.ipynb  
+• dataset_foundation.ipynb  
+• dataset_moisturizer.ipynb  
+• EDA.ipynb  
+• TF_IDF.ipynb  
+• BERT.ipynb  
+• BART.ipynb  
+• KeyBert.ipynb  
+• GPT_4o_mini.ipynb  
+• opinion_mining.ipynb  
+• Comparison.ipynb  
+• before_streamlit.ipynb  
 
-data/
-all_reviews.csv
-all_reviews_foundation.csv
-all_reviews_moisture.csv
-nlp_merged_reviews.csv
-products_benefit_disadv.csv
-products_final.csv
-similarity_matrix.csv
+outputs/  
+• heatmaps/  
+• similarity_plots/  
+• model_results/  
 
-notebooks/
-dataset1.ipynb
-dataset_foundation.ipynb
-dataset_moisturizer.ipynb
-EDA.ipynb
-TF_IDF.ipynb
-BERT.ipynb
-BART.ipynb
-KeyBert.ipynb
-GPT_4o_mini.ipynb
-opinion_mining.ipynb
-Comparison.ipynb
-before_streamlit.ipynb
-
-outputs/
-heatmaps/
-similarity_plots/
-model_results/
-
-app.py
-requirements.txt
-README.md
-
+Other files:  
+• app.py  
+• requirements.txt  
+• README.md  
 
 ---
 
 ## Methods
 
-### 1. Data Gathering
-Reviews were merged from three platforms:
-- Sephora  
-- Ulta  
-- Shoppers Drug Mart  
+### 1. Data Collection
+Reviews were collected from 3 major platforms (Sephora, Ulta, Shoppers).  
+All merged into CSV files inside the `data/` folder.
 
 ### 2. NLP Extraction
-GPT-4o-mini was used to extract:
-- Benefits  
-- Disadvantages  
+GPT-4o-mini was used to extract:  
+• product benefits  
+• disadvantages  
 
-Saved in `products_benefit_disadv.csv`.
+Stored in `products_benefit_disadv.csv`.
 
-### 3. TF-IDF Similarity
-Benefits were vectorized with TF-IDF, and cosine similarity was computed to create:
-- `similarity_matrix.csv`  
+### 3. Similarity Computation
+• TF-IDF applied to extracted benefits  
+• Cosine similarity used to produce a product similarity matrix  
+• Heatmaps and comparison plots generated  
 
-This allows recommendation of the most similar product.
+Matrix saved in:  
+`similarity_matrix.csv`
 
 ### 4. Streamlit App
-The app lets users:
-- Choose moisturizer/foundation  
-- View extracted insights  
-- Get the most similar product recommendation  
+The app supports:  
+• selecting moisturizer or foundation  
+• viewing extracted benefits/disadvantages  
+• recommending the most similar product  
 
-Run locally:
+Run:
 
-```bash
 streamlit run app.py
 
-Installation
+yaml
+Copy code
+
+---
+
+## Installation
+
 pip install -r requirements.txt
 
-Next Steps
+yaml
+Copy code
 
-Add more products
+---
 
-Improve similarity using SBERT
+## Next Steps
 
-Add product images
+• Add more products  
+• Improve similarity with SBERT  
+• Add product images  
+• Deploy Streamlit app online  
 
-Deploy the Streamlit app online
+---
 
-Acknowledgments
+## Acknowledgments
 
-Reviews were collected from:
+Reviews collected from:  
+• Sephora (Bazaarvoice)  
+• Ulta & Shoppers Drug Mart (PowerReviews)
 
-Sephora (Bazaarvoice)
-
-Ulta & Shoppers Drug Mart (PowerReviews)
-
-This project was part of Northeastern University’s IE 7500 NLP coursework.
+This project was completed for Northeastern University’s IE 7500 NLP course.
