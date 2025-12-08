@@ -8,41 +8,40 @@ Using NLP techniques, the project extracts **benefits**, **disadvantages**, and 
 
 ## 📁 Project Structure
 
+```text
 project/
 │ README.md
 │ requirements.txt
 │ app.py
 │
 ├── data/
-│ ├── all_reviews.csv
-│ ├── all_reviews_foundation.csv
-│ ├── all_reviews_moisture.csv
-│ ├── nlp_merged_reviews.csv
-│ ├── products_benefit_disadv.csv
-│ ├── products_final.csv
-│ └── similarity_matrix.csv
+│   ├── all_reviews.csv
+│   ├── all_reviews_foundation.csv
+│   ├── all_reviews_moisture.csv
+│   ├── nlp_merged_reviews.csv
+│   ├── products_benefit_disadv.csv
+│   ├── products_final.csv
+│   └── similarity_matrix.csv
 │
 ├── notebooks/
-│ ├── dataset1.ipynb
-│ ├── dataset_foundation.ipynb
-│ ├── dataset_moisturizer.ipynb
-│ ├── EDA.ipynb
-│ ├── TF_IDF.ipynb
-│ ├── BERT.ipynb
-│ ├── BART.ipynb
-│ ├── KeyBert.ipynb
-│ ├── GPT_4o_mini.ipynb
-│ ├── opinion_mining.ipynb
-│ ├── Comparison.ipynb
-│ └── before_streamlit.ipynb
+│   ├── dataset1.ipynb
+│   ├── dataset_foundation.ipynb
+│   ├── dataset_moisturizer.ipynb
+│   ├── EDA.ipynb
+│   ├── TF_IDF.ipynb
+│   ├── BERT.ipynb
+│   ├── BART.ipynb
+│   ├── KeyBert.ipynb
+│   ├── GPT_4o_mini.ipynb
+│   ├── opinion_mining.ipynb
+│   ├── Comparison.ipynb
+│   └── before_streamlit.ipynb
 │
 └── outputs/
-├── heatmaps/
-├── similarity_plots/
-└── model_results/
+    ├── heatmaps/
+    ├── similarity_plots/
+    └── model_results/
 
-yaml
-Copy code
 
 ---
 
