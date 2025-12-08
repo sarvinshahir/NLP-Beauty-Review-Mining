@@ -1,51 +1,146 @@
-# Multi-Source Review Mining: Pros, Cons, and Comparison of Beauty Products
+# Multi-Source Review Mining: Pros, Cons, and Product Similarity  
 **Author:** Sarvin Shahir  
 
-This project analyzes beauty product reviews from multiple retailers — Sephora, Ulta, and Shoppers Drug Mart — using Natural Language Processing (NLP) techniques to extract sentiment, pros, and cons.
+This project analyzes beauty product reviews collected from Sephora, Ulta, and Shoppers Drug Mart.  
+Using NLP techniques, the project extracts **benefits**, **disadvantages**, and **cross-product similarities**, and provides an interactive Streamlit app for easy exploration.
 
 ---
 
 ## 📁 Project Structure
-data/ → Contains the raw and cleaned CSV datasets
-notebooks/ → Jupyter notebooks for each stage
-outputs/ → Evaluation results and visuals
+
+project/
+│ README.md
+│ requirements.txt
+│ app.py
+│
+├── data/
+│ ├── all_reviews.csv
+│ ├── all_reviews_foundation.csv
+│ ├── all_reviews_moisture.csv
+│ ├── nlp_merged_reviews.csv
+│ ├── products_benefit_disadv.csv
+│ ├── products_final.csv
+│ └── similarity_matrix.csv
+│
+├── notebooks/
+│ ├── dataset1.ipynb
+│ ├── dataset_foundation.ipynb
+│ ├── dataset_moisturizer.ipynb
+│ ├── EDA.ipynb
+│ ├── TF_IDF.ipynb
+│ ├── BERT.ipynb
+│ ├── BART.ipynb
+│ ├── KeyBert.ipynb
+│ ├── GPT_4o_mini.ipynb
+│ ├── opinion_mining.ipynb
+│ ├── Comparison.ipynb
+│ └── before_streamlit.ipynb
+│
+└── outputs/
+├── heatmaps/
+├── similarity_plots/
+└── model_results/
 
 yaml
 Copy code
 
-| Notebook | Purpose |
-|-----------|----------|
-| `dataset1.ipynb` | API extraction for 4 products from 3 retailers |
-| `EDA.ipynb` | Cleaning, preprocessing, and exploratory visualizations |
-| `TF_IDF.ipynb` | Baseline sentiment model |
-| `BERT.ipynb` | Transformer fine-tuning for rating prediction |
-| `opinion_mining.ipynb` | Pros and cons extraction experiments |
+---
+
+## 🧪 NLP Tasks Completed
+
+### **1. Data Collection**
+Reviews were extracted from:
+- Sephora (Bazaarvoice)
+- Ulta & Shoppers Drug Mart (PowerReviews)
+
+Files:
+- `all_reviews.csv`
+- `all_reviews_foundation.csv`
+- `all_reviews_moisture.csv`
+- `nlp_merged_reviews.csv`
 
 ---
 
-## 📊 Dataset
-- 4 foundation products: NARS, Estée Lauder, Dior, Armani  
-- 200–300 reviews per product (≈ 1 000 total)  
-- Sources: Sephora (Bazaarvoice), Ulta & Shoppers (PowerReviews)
+### **2. Benefit & Disadvantage Extraction**
+Using **GPT-4o-mini**, each product was assigned:
+- a list of **benefits**  
+- a list of **disadvantages**
+
+Stored in:
+- `products_benefit_disadv.csv`
 
 ---
 
-## ⚙️ Models Implemented
-1. **TF-IDF + Logistic Regression**  
-2. **BERT (bert-base-uncased)**  
-3. **Aspect extraction prototypes** (VADER & Flan-T5)
+### **3. Product Categorization**
+Each product was manually labeled as:
+- *foundation*  
+- *moisturizer*
+
+Stored in:
+- `products_final.csv`
 
 ---
 
-## 🧠 Next Steps
-- Add more products  
-- Implement RNN (LSTM)  
-- Improve pros/cons extraction  
-- Build Streamlit app for interactive comparison
+### **4. Similarity Analysis**
+Using TF-IDF + cosine similarity:
+- Benefits were vectorized  
+- Product-to-product similarity matrix was computed  
+- Visual heatmaps were produced
+
+Stored in:
+- `similarity_matrix.csv`
 
 ---
 
-## 🚀 How to Run
+### **5. Model Experiments**
+This project includes experiments with:
+- **TF-IDF + Logistic Regression**
+- **BERT (bert-base-uncased)**
+- **BART**
+- **KeyBERT**
+- **GPT-4o-mini**
+- Comparison of pros/cons extraction performance
+
+All steps documented inside notebooks.
+
+---
+
+## 🌐 Streamlit Application
+
+An interactive app that allows users to:
+
+- View **product benefits** and **disadvantages**
+- Filter by **foundation** or **moisturizer**
+- Find the **most similar product** based on extracted benefits
+
+Run locally:
+
 ```bash
+streamlit run app.py
+🧠 Next Steps
+Add more beauty products
+
+Use SBERT for stronger semantic similarity
+
+Add product images and brand metadata
+
+Deploy Streamlit app online
+
+📦 Installation
+Install dependencies:
+
+bash
+Copy code
 pip install -r requirements.txt
-jupyter notebook notebooks/
+Launch Jupyter notebooks:
+jupyter notebook
+
+🤝 Acknowledgments
+Customer reviews were sourced from:
+
+Sephora (Bazaarvoice API)
+
+Ulta & Shoppers Drug Mart (PowerReviews API)
+
+This project was completed as part of Northeastern University’s NLP course (IE 7500).
+
