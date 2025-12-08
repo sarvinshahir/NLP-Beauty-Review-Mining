@@ -1,106 +1,102 @@
-# Multi-Source Review Mining: Pros, Cons, and Product Similarity
-**Author:** Sarvin Shahir
+Multi-Source Review Mining: Pros, Cons, and Product Similarity
+Author: Sarvin Shahir
 
-This project analyzes beauty product reviews collected from Sephora, Ulta, and Shoppers Drug Mart.  
+This project analyzes beauty product reviews collected from Sephora, Ulta, and Shoppers Drug Mart. 
 It extracts benefits, disadvantages, and product similarity using NLP methods, and includes a Streamlit app for interactive comparison.
 
 ---
 
-## Project Structure
+Project Structure
 
-data/  
-• all_reviews.csv  
-• all_reviews_foundation.csv  
-• all_reviews_moisture.csv  
-• nlp_merged_reviews.csv  
-• products_benefit_disadv.csv  
-• products_final.csv  
-• similarity_matrix.csv  
+### Data
+- all_reviews.csv  
+- all_reviews_foundation.csv  
+- all_reviews_moisture.csv  
+- nlp_merged_reviews.csv  
+- products_benefit_disadv.csv  
+- products_final.csv  
+- similarity_matrix.csv  
 
-notebooks/  
-• dataset1.ipynb  
-• dataset_foundation.ipynb  
-• dataset_moisturizer.ipynb  
-• EDA.ipynb  
-• TF_IDF.ipynb  
-• BERT.ipynb  
-• BART.ipynb  
-• KeyBert.ipynb  
-• GPT_4o_mini.ipynb  
-• opinion_mining.ipynb  
-• Comparison.ipynb  
-• before_streamlit.ipynb  
+### Notebooks
+- dataset1.ipynb  
+- dataset_foundation.ipynb  
+- dataset_moisturizer.ipynb  
+- EDA.ipynb  
+- TF_IDF.ipynb  
+- BERT.ipynb  
+- BART.ipynb  
+- KeyBert.ipynb  
+- GPT_4o_mini.ipynb  
+- opinion_mining.ipynb  
+- Comparison.ipynb  
+- before_streamlit.ipynb  
 
-outputs/  
-• heatmaps/  
-• similarity_plots/  
-• model_results/  
+### Outputs
+- heatmaps/  
+- similarity_plots/  
+- model_results/  
 
-Other files:  
-• app.py  
-• requirements.txt  
-• README.md  
+### Other Files
+- app.py  
+- requirements.txt  
+- README.md  
 
 ---
 
-## Methods
+Methods
 
 ### 1. Data Collection
-Reviews were collected from 3 major platforms (Sephora, Ulta, Shoppers).  
-All merged into CSV files inside the `data/` folder.
+Reviews were collected from Sephora, Ulta, and Shoppers Drug Mart.  
+All merged into CSV files inside the data/ folder.
 
 ### 2. NLP Extraction
-GPT-4o-mini was used to extract:  
-• product benefits  
-• disadvantages  
+GPT-4o-mini was used to extract product benefits and disadvantages.  
+Saved in products_benefit_disadv.csv.
 
-Stored in `products_benefit_disadv.csv`.
+### 3. Model Experiments
+The project includes experiments using:
+- TF-IDF + Logistic Regression  
+- BERT (bert-base-uncased)  
+- BART  
+- KeyBERT  
+- GPT-4o-mini  
+All experiments are documented in the notebooks.
 
-### 3. Similarity Computation
-• TF-IDF applied to extracted benefits  
-• Cosine similarity used to produce a product similarity matrix  
-• Heatmaps and comparison plots generated  
+### 4. Similarity Computation
+- TF-IDF applied to extracted benefits  
+- Cosine similarity computed for product-to-product comparison  
+- Heatmaps and similarity plots generated  
+Matrix saved in similarity_matrix.csv.
 
-Matrix saved in:  
-`similarity_matrix.csv`
-
-### 4. Streamlit App
-The app supports:  
-• selecting moisturizer or foundation  
-• viewing extracted benefits/disadvantages  
-• recommending the most similar product  
+### 5. Streamlit App
+The app supports:
+- Selecting moisturizer or foundation  
+- Viewing extracted benefits/disadvantages  
+- Recommending the most similar product  
 
 Run:
-
 streamlit run app.py
 
-yaml
-Copy code
-
 ---
 
-## Installation
-
+Installation
 pip install -r requirements.txt
 
-yaml
-Copy code
+---
+
+Next Steps
+- Add more products  
+- Improve similarity with SBERT  
+- Add product images  
+- Deploy the Streamlit app online  
 
 ---
 
-## Next Steps
-
-• Add more products  
-• Improve similarity with SBERT  
-• Add product images  
-• Deploy Streamlit app online  
-
----
-
-## Acknowledgments
-
-Reviews collected from:  
-• Sephora (Bazaarvoice)  
-• Ulta & Shoppers Drug Mart (PowerReviews)
+Acknowledgments
+Reviews collected from:
+- Sephora (Bazaarvoice)  
+- Ulta (PowerReviews)  
+- Shoppers Drug Mart (PowerReviews)  
 
 This project was completed for Northeastern University’s IE 7500 NLP course.
+<img width="468" height="638" alt="image" src="https://github.com/user-attachments/assets/d78b61a1-0399-451c-a970-3560b7914043" />
