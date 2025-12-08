@@ -99,4 +99,3 @@ Reviews collected from:
 - Shoppers Drug Mart (PowerReviews)  
 
 This project was completed for Northeastern University’s IE 7500 NLP course.
-<img width="468" height="638" alt="image" src="https://github.com/user-attachments/assets/d78b61a1-0399-451c-a970-3560b7914043" />
