@@ -1,88 +1,106 @@
 # Multi-Source Review Mining: Pros, Cons, and Product Similarity
 ## Author: Sarvin Shahir
 
-<<<<<<< HEAD
 This project analyzes beauty product reviews from multiple retailers — Sephora, Ulta, and Shoppers Drug Mart — using Natural Language Processing (NLP) techniques to extract benefits, disadvantages, and product similarity.  
 A Streamlit application is included for interactive product comparison.
 
 ---
-
-## 📁 Project Structure
-**data/** → Raw and processed CSV files  
-**notebooks/** → All analysis and modeling notebooks  
-**outputs/** → Heatmaps, similarity plots, and visualizations  
-**app.py** → Streamlit app for product comparison  
+This project analyzes beauty product reviews collected from Sephora, Ulta, and Shoppers Drug Mart. 
+It extracts benefits, disadvantages, and product similarity using NLP methods, and includes a Streamlit app for interactive comparison.
 
 ---
 
-## 📓 Notebooks Overview
+## Project Structure
 
-| Notebook | Purpose |
-|----------|---------|
-| `1_dataset_collection.ipynb` | Collect and merge reviews from Sephora, Ulta, Shoppers |
-| `2_dataset_foundation.ipynb` | Foundation review dataset processing |
-| `3_dataset_moisturizer.ipynb` | Moisturizer review dataset processing |
-| `4_EDA.ipynb` | Data cleaning and exploratory analysis |
-| `5_TF_IDF.ipynb` | Baseline feature extraction + classical models |
-| `6_opinion_mining.ipynb` | Pros/cons extraction experiments |
-| `7_BERT.ipynb` | BERT model for rating prediction |
-| `8_BART.ipynb` | BART for text summarization and extraction |
-| `9_KeyBert.ipynb` | Keyword extraction trials |
-| `10_GPT_4o_mini.ipynb` | Benefit & disadvantage extraction with GPT |
-| `11_Comparison.ipynb` | Comparison of extracted benefits across brands |
-| `12_before_streamlit.ipynb` | Generate files for the Streamlit app |
+### Data
+- all_reviews.csv  
+- all_reviews_foundation.csv  
+- all_reviews_moisture.csv  
+- nlp_merged_reviews.csv  
+- products_benefit_disadv.csv  
+- products_final.csv  
+- similarity_matrix.csv  
 
----
+### Notebooks
+- dataset1.ipynb  
+- dataset_foundation.ipynb  
+- dataset_moisturizer.ipynb  
+- EDA.ipynb  
+- TF_IDF.ipynb  
+- BERT.ipynb  
+- BART.ipynb  
+- KeyBert.ipynb  
+- GPT_4o_mini.ipynb  
+- opinion_mining.ipynb  
+- Comparison.ipynb  
+- before_streamlit.ipynb  
 
-## 📊 Dataset Summary
-- Reviews collected for **12 beauty products** (foundations + moisturizers)  
-- ~1,000+ total reviews  
-- Extracted metadata includes:  
-  - benefit tags  
-  - disadvantage tags  
-  - semantic similarity scores  
-- Sources:  
-  - **Sephora** (Bazaarvoice)  
-  - **Ulta & Shoppers Drug Mart** (PowerReviews)
+### Outputs
+- heatmaps/  
+- similarity_plots/  
+- model_results/  
 
----
-
-## ⚙️ Models Implemented
-
-### Classical
-- **TF-IDF + Logistic Regression**
-
-### Transformer Models
-- **BERT (bert-base-uncased)**  
-- **BART**  
-- **GPT-4o-mini** for high-quality benefit/disadvantage extraction  
-
-### Keyword & Aspect Models
-- **KeyBERT**  
-- Early experiments with **VADER** and **Flan-T5**
-
-### Similarity Modeling
-- TF-IDF vectorization of extracted benefits  
-- Cosine similarity matrix for product-to-product comparison  
-- Heatmaps for moisturizer and foundation categories  
+### Other Files
+- app.py  
+- requirements.txt  
+- README.md  
 
 ---
 
-## 🌐 Streamlit App
-The Streamlit application allows users to:
-- Select **foundation** or **moisturizer**  
-- View extracted **benefits** and **disadvantages**  
-- See the **most similar product** based on NLP similarity  
+## Methods
 
-Run locally:
-```bash
+### 1. Data Collection
+Reviews were collected from Sephora, Ulta, and Shoppers Drug Mart.  
+All merged into CSV files inside the data/ folder.
+
+### 2. NLP Extraction
+GPT-4o-mini was used to extract product benefits and disadvantages.  
+Saved in products_benefit_disadv.csv.
+
+### 3. Model Experiments
+The project includes experiments using:
+- TF-IDF + Logistic Regression  
+- BERT (bert-base-uncased)  
+- BART  
+- KeyBERT  
+- GPT-4o-mini  
+All experiments are documented in the notebooks.
+
+### 4. Similarity Computation
+- TF-IDF applied to extracted benefits  
+- Cosine similarity computed for product-to-product comparison  
+- Heatmaps and similarity plots generated  
+Matrix saved in similarity_matrix.csv.
+
+### 5. Streamlit App
+The app supports:
+- Selecting moisturizer or foundation  
+- Viewing extracted benefits/disadvantages  
+- Recommending the most similar product  
+
+Run:
 streamlit run app.py
 
+---
 
-## 🧠 Next Steps
+Installation
+pip install -r requirements.txt
 
-- Add additional product categories
-- Improve similarity using SBERT
-- Add product images and brand metadata
-- Deploy the Streamlit app online
-=======
+---
+
+## Next Steps
+- Add more products  
+- Improve similarity with SBERT  
+- Add product images  
+- Deploy the Streamlit app online  
+
+---
+
+## Acknowledgments
+Reviews collected from:
+- Sephora (Bazaarvoice)  
+- Ulta (PowerReviews)  
+- Shoppers Drug Mart (PowerReviews)  
+
+This project was completed for Northeastern University’s IE 7500 NLP course.
+
