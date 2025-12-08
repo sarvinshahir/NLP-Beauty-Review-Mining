@@ -1,12 +1,12 @@
-## Multi-Source Review Mining: Pros, Cons, and Product Similarity
-### Author: Sarvin Shahir
+# Multi-Source Review Mining: Pros, Cons, and Product Similarity
+## Author: Sarvin Shahir
 
 This project analyzes beauty product reviews collected from Sephora, Ulta, and Shoppers Drug Mart. 
 It extracts benefits, disadvantages, and product similarity using NLP methods, and includes a Streamlit app for interactive comparison.
 
 ---
 
-Project Structure
+## Project Structure
 
 ### Data
 - all_reviews.csv  
@@ -43,7 +43,7 @@ Project Structure
 
 ---
 
-Methods
+## Methods
 
 ### 1. Data Collection
 Reviews were collected from Sephora, Ulta, and Shoppers Drug Mart.  
@@ -84,7 +84,7 @@ pip install -r requirements.txt
 
 ---
 
-Next Steps
+## Next Steps
 - Add more products  
 - Improve similarity with SBERT  
 - Add product images  
@@ -92,7 +92,7 @@ Next Steps
 
 ---
 
-Acknowledgments
+## Acknowledgments
 Reviews collected from:
 - Sephora (Bazaarvoice)  
 - Ulta (PowerReviews)  
