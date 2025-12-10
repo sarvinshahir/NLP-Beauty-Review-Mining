@@ -2,14 +2,3 @@ streamlit
 pandas
 numpy
 scikit-learn
-matplotlib
-seaborn
-transformers
-torch
-tqdm
-requests
-beautifulsoup4
-nltk
-keybert
-sentence-transformers
-jupyter
