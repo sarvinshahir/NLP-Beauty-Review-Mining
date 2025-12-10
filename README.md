@@ -25,12 +25,13 @@ The goal is to build a reproducible NLP pipeline that transforms raw multi-sourc
 
 ### Root Files
 - README.md  
-- requirements.txt  
+- requirements.txt
+- requirements2.txt
 - app.py  
 
 ### Folders
 - **data/** — raw and processed CSV files  
-- **notebooks/** — analysis, modeling, and experiments  
+- **notebooks/** — Preprocessing, Modeling 
 
 
 ---
@@ -78,6 +79,7 @@ These files allow full reproduction of model results and the Streamlit app.
 
 Launch the interactive demo:
 streamlit run app.py
+requirements.txt
 
 
 The app provides:
@@ -191,4 +193,4 @@ torch.manual_seed(42)
 
 All software dependencies are listed in:
 
-requirements.txt
+requirements2.txt
