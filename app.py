@@ -14,8 +14,8 @@ import pandas as pd
 # LOAD DATA
 # ---------------------------------------------------------
 
-df = pd.read_csv("products_final.csv")  # product_name, benefits, disadvantages, category
-sim_df = pd.read_csv("similarity_matrix.csv", index_col=0)
+df = pd.read_csv("data/products_final.csv")  # product_name, benefits, disadvantages, category
+sim_df = pd.read_csv("data/similarity_matrix.csv", index_col=0)
 
 
 # ---------------------------------------------------------
